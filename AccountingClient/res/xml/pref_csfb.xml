@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_phone_num"
+        android:inputType="number"
+        android:key="phone_num"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Phone #" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_call_duration"
+        android:inputType="number"
+        android:key="call_duration"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Call Duration (ms)" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_pause_advance"
+        android:inputType="number"
+        android:key="pause_advance"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Pause Advance (ms)" />
+
+</PreferenceScreen>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_server_ip"
+        android:key="server_ip"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Gateway IP" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_signaling_port"
+        android:inputType="number"
+        android:key="signaling_port"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Signaling Port" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_data_port"
+        android:inputType="number"
+        android:key="data_port"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Data Port" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_probing_port"
+        android:inputType="number"
+        android:key="probing_port"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Probing Port" />
+    
+    
+    
+
+</PreferenceScreen>

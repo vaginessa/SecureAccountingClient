@@ -1,0 +1,25 @@
+<resources>
+
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    
+    <string name="pref_default_monitor_interval">100</string>
+    <string name="pref_default_data_rate">100</string>
+    
+    <string name="pref_default_phone_num">3103039508</string>
+    <string name="pref_default_call_duration">20000</string>
+    <string name="pref_default_pause_advance">500</string>
+    
+    <string name="pref_default_server_ip">184.82.237.33</string>
+    <string name="pref_default_signaling_port">9999</string>
+    <string name="pref_default_data_port">9999</string>
+    <string name="pref_default_probing_port">9999</string>
+    
+    
+    
+
+
+    
+
+</resources>
