@@ -14,7 +14,9 @@ public class EventLog {
 	public static final String SEPARATOR = ";";
 
 	public enum Type {
-		HANDOVER, MONITOR, DEBUG, SLEEP, CALL, END_CALL, CALLSTATE, DATAFLOW
+		HANDOVER, MONITOR, DEBUG, SLEEP, CALL, END_CALL, 
+		CALLSTATE, DATAFLOW, SPAMFLOW, AUTOTEST, CONN, PROBING, 
+		AUTOCALL, LOCATION, DATAONOFF
 	};
 
 	private static PrintWriter logFileWriter;
@@ -62,9 +64,11 @@ public class EventLog {
 		sb.append("ac");
 		for (String parameter : parameters) {
 			sb.append("_");
-			sb.append(parameter);
+			String p = parameter.replace('&', '-');
+			sb.append(p);
 		}
 		sb.append(".txt");
+		
 		return sb.toString();
 	}
 

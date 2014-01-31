@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <EditTextPreference
+        android:defaultValue="0"
+        android:inputType="number"
+        android:key="dummy_update"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="Enable Dummy Update" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_ta_update_period"
+        android:inputType="number"
+        android:key="ta_update_period"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="TA Update Period (ms)" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_ta_update_duration_min"
+        android:inputType="number"
+        android:key="ta_update_duration_min"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="TA Update Duration Min (ms)" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_ta_update_duration_max"
+        android:inputType="number"
+        android:key="ta_update_duration_max"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="TA Update Duration Max (ms)" />
+    
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_ra_update_period"
+        android:inputType="number"
+        android:key="ra_update_period"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="RA Update Period (ms)" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_ra_update_duration_min"
+        android:inputType="number"
+        android:key="ra_update_duration_min"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="RA Update Duration Min (ms)" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_ra_update_duration_max"
+        android:inputType="number"
+        android:key="ra_update_duration_max"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="RA Update Duration Max (ms)" />
+    
+
+</PreferenceScreen>

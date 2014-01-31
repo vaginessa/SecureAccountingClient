@@ -14,6 +14,10 @@ public interface ICommander {
 	
 	public void stopData();
 	
+	public void startSpam();
+	
+	public void stopSpam();
+	
 	public void pauseData();
 	
 	public void resumeData();
@@ -21,6 +25,35 @@ public interface ICommander {
 	public void startProbing();
 	
 	public void stopProbing();
+	
+	public void runAutoTestSpam();
+	
+	public void setupConn();
+	
+	public void setupConnAuth();
+	
+	public void runAutoConn();
+	
+	public void startAlarm(String function);
+	
+	public void stopAlarm();
+	
+	public void onAlarm();
+	
+	public void connectDummyWeb();
+	
+	public void runAutoCall();
+	
+	public void runAutoTurnOnOffData();
+	
+	public void startLocationUpdate();
+	
+	public void stopLocationUpdate();
+	
+	public void sendLocationUpdateProbe();
+	
+	public void onNetworkConnectionChange(boolean connected);
+	
 	
 
 }

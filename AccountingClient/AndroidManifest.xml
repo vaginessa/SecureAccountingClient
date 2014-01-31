@@ -17,6 +17,8 @@
     <uses-permission android:name="android.permission.ACCESS_SUPERUSER" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
 
     <application
         android:allowBackup="true"
@@ -40,12 +42,21 @@
             </intent-filter>
         </service>
 
-        <receiver android:name="edu.ucla.cs.wing.accountingclient.CallMonitor" >
+        <!-- <receiver android:name="edu.ucla.cs.wing.accountingclient.CallMonitor" >
             <intent-filter>
                 <action android:name="android.intent.action.NEW_OUTGOING_CALL" >
                 </action>
             </intent-filter>
+        </receiver> -->
+        
+        <receiver android:name="edu.ucla.cs.wing.accountingclient.ConnectivityMonitor" >
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" >
+                </action>
+            </intent-filter>
         </receiver>
+        
+        <receiver android:name=".AlarmReceiver" />
 
         <activity
             android:name="edu.ucla.cs.wing.accountingclient.SettingsActivity"

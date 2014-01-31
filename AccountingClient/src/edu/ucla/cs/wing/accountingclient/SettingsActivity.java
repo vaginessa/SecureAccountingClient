@@ -63,8 +63,18 @@ public class SettingsActivity extends PreferenceActivity {
 		addPreferencesFromResource(R.xml.pref_general);
 		bindPreferenceSummaryToValue(findPreference("data_rate"));
 		bindPreferenceSummaryToValue(findPreference("monitor_interval"));
-
+		
 		PreferenceCategory fakeHeader = new PreferenceCategory(this);
+		fakeHeader.setTitle("Probing");
+		getPreferenceScreen().addPreference(fakeHeader);
+		addPreferencesFromResource(R.xml.pref_probing);
+		bindPreferenceSummaryToValue(findPreference("probing_method"));
+		bindPreferenceSummaryToValue(findPreference("probing_thres_loss"));
+		bindPreferenceSummaryToValue(findPreference("probing_rate"));
+		bindPreferenceSummaryToValue(findPreference("probing_thres_rate"));
+		bindPreferenceSummaryToValue(findPreference("probing_check_interval"));
+
+		fakeHeader = new PreferenceCategory(this);
 		fakeHeader.setTitle("Gateway");
 		getPreferenceScreen().addPreference(fakeHeader);
 		addPreferencesFromResource(R.xml.pref_gateway);
@@ -74,13 +84,36 @@ public class SettingsActivity extends PreferenceActivity {
 		bindPreferenceSummaryToValue(findPreference("probing_port"));
 		
 		fakeHeader = new PreferenceCategory(this);
+		fakeHeader.setTitle("Auto Test");
+		getPreferenceScreen().addPreference(fakeHeader);
+		addPreferencesFromResource(R.xml.pref_autotest);
+		bindPreferenceSummaryToValue(findPreference("auto_repeat"));
+		bindPreferenceSummaryToValue(findPreference("auto_duration"));
+		bindPreferenceSummaryToValue(findPreference("auto_interval"));
+		bindPreferenceSummaryToValue(findPreference("auto_start_rate"));
+		bindPreferenceSummaryToValue(findPreference("auto_end_rate"));
+		
+		fakeHeader = new PreferenceCategory(this);
+		fakeHeader.setTitle("Location UPdate");
+		getPreferenceScreen().addPreference(fakeHeader);
+		addPreferencesFromResource(R.xml.pref_location_upate);
+		bindPreferenceSummaryToValue(findPreference("dummy_update"));
+		bindPreferenceSummaryToValue(findPreference("ta_update_period"));
+		bindPreferenceSummaryToValue(findPreference("ta_update_duration_min"));
+		bindPreferenceSummaryToValue(findPreference("ta_update_duration_max"));
+		bindPreferenceSummaryToValue(findPreference("ra_update_period"));
+		bindPreferenceSummaryToValue(findPreference("ra_update_duration_min"));
+		bindPreferenceSummaryToValue(findPreference("ra_update_duration_max"));
+		
+		fakeHeader = new PreferenceCategory(this);
 		fakeHeader.setTitle("CSFB");
 		getPreferenceScreen().addPreference(fakeHeader);
 		addPreferencesFromResource(R.xml.pref_csfb);
-		
 		bindPreferenceSummaryToValue(findPreference("phone_num"));
 		bindPreferenceSummaryToValue(findPreference("call_duration"));
 		bindPreferenceSummaryToValue(findPreference("pause_advance"));
+		bindPreferenceSummaryToValue(findPreference("auto_wait_before_call"));
+		bindPreferenceSummaryToValue(findPreference("auto_wait_after_call"));
 		
 	}
 

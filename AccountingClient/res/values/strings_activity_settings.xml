@@ -6,6 +6,20 @@
     
     <string name="pref_default_monitor_interval">100</string>
     <string name="pref_default_data_rate">100</string>
+    <string name="pref_default_probing_rate">1000</string>
+    <string name="pref_default_probing_thres_rate">500</string>
+    <string name="pref_default_probing_check_interval">1000</string>
+    <string name="pref_default_probing_thres_loss">5</string>
+    
+    <string-array name="pref_probing_method_titles">
+        <item>Consecutive Loss</item>
+        <item>Rate</item>
+    </string-array>
+    
+	<string-array name="pref_probing_method_values">
+        <item>0</item>
+        <item>1</item>
+    </string-array>
     
     <string name="pref_default_phone_num">3103039508</string>
     <string name="pref_default_call_duration">20000</string>
@@ -16,10 +30,22 @@
     <string name="pref_default_data_port">9999</string>
     <string name="pref_default_probing_port">9999</string>
     
+    <string name="pref_default_auto_wait_before_call">6000</string>
+    <string name="pref_default_auto_wait_after_call">4000</string>
     
-    
-
-
+	<string name="pref_default_auto_repeat">1</string>
+	<string name="pref_default_auto_duration">10000</string>
+	<string name="pref_default_auto_interval">5000</string>
+	<string name="pref_default_auto_start_rate">100</string>
+	<string name="pref_default_auto_end_rate">1000</string>
+	
+	<string name="pref_default_ta_update_period">30000</string>
+	<string name="pref_default_ta_update_duration_min">1000</string>
+	<string name="pref_default_ta_update_duration_max">3000</string>
+	
+	<string name="pref_default_ra_update_period">20000</string>
+	<string name="pref_default_ra_update_duration_min">1000</string>
+	<string name="pref_default_ra_update_duration_max">2500</string>
     
 
 </resources>

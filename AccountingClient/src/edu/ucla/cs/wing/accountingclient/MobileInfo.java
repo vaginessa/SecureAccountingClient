@@ -1,5 +1,7 @@
 package edu.ucla.cs.wing.accountingclient;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -39,6 +41,8 @@ import android.os.Message;
 import java.util.ArrayList;
 import java.util.Date;
 
+import edu.ucla.cs.wing.accountingclient.EventLog.Type;
+
 
 
 public class MobileInfo {
@@ -54,19 +58,36 @@ public class MobileInfo {
 	private String neighborStatus = "";
 	private String networkTypeStr = ""; /*ex: GPRS, UMTS, HSPA, ..*/	
 	private TelephonyManager        telMgr;
+	private ConnectivityManager connectivityManager;
 	private MobilePhoneStateListener    mListener;	
 	private LocationManager mlocManager;
 	private LocationListener mlocListener;
 	private Context mContext;
 	private int callState = 0;
 	
+	private boolean connected = true;
+	
 	//private Timer statsPullTimer = new Timer();
+	
+	public boolean isConnected() {
+		return connected;
+	}
+
+	public void setConnected(boolean connected) {
+		this.connected = connected;
+	}
+
+	private Method dataMtd = null;
 	
 	
 	private static MobileInfo instance;
 	
 	public static void init(Context context) {
 		instance = new MobileInfo(context);
+		
+		
+		
+		
 	}
 		
 	public static MobileInfo getInstance() {
@@ -92,8 +113,29 @@ public class MobileInfo {
         
         
        // statsPullTimer.schedule(new statusPullTask(250), 250);
-      
         
+        connectivityManager = (ConnectivityManager) mContext.getSystemService(context.CONNECTIVITY_SERVICE);
+        try {
+			dataMtd = ConnectivityManager.class.getDeclaredMethod("setMobileDataEnabled", boolean.class);
+		} catch (NoSuchMethodException e) {
+			EventLog.write(Type.DEBUG, e.toString());
+		}  
+        
+	}
+	
+	public void setMobileDataEnabled(boolean enabled) {
+		try {
+			dataMtd.invoke(connectivityManager, enabled);
+		} catch (IllegalArgumentException e) {
+			// TODO Auto-generated catch block
+			EventLog.write(Type.DEBUG, e.toString());
+		} catch (IllegalAccessException e) {
+			// TODO Auto-generated catch block
+			EventLog.write(Type.DEBUG, e.toString());
+		} catch (InvocationTargetException e) {
+			// TODO Auto-generated catch block
+			EventLog.write(Type.DEBUG, e.toString());
+		}
 	}
 	
 	/*Retrieve Phone Model*/
@@ -285,7 +327,7 @@ public class MobileInfo {
       @Override
       public void onDataConnectionStateChanged(int state, int networkType) {
     	  //Log.d("autocaller", "Conn state change: " + networkType);
-    	  
+    	  //EventLog.write(Type.DEBUG, "ConnState: " + state);
     	  setNetworkType(networkType);
     	  super.onDataConnectionStateChanged(state, networkType);
       }

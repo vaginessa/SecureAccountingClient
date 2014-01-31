@@ -1,49 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
     <EditTextPreference
-        android:defaultValue="@string/pref_default_phone_num"
-        android:inputType="number"
-        android:key="phone_num"
+        android:defaultValue="@string/pref_default_auto_repeat"
+        android:key="auto_repeat"
         android:maxLines="1"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="Phone #" />
+        android:title="Repeat" />
     
     <EditTextPreference
-        android:defaultValue="@string/pref_default_call_duration"
-        android:inputType="number"
-        android:key="call_duration"
+        android:defaultValue="@string/pref_default_auto_duration"
+        android:key="auto_duration"
         android:maxLines="1"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="Call Duration (ms)" />
+        android:title="Duration (ms)" />
     
     <EditTextPreference
-        android:defaultValue="@string/pref_default_pause_advance"
+        android:defaultValue="@string/pref_default_auto_interval"
         android:inputType="number"
-        android:key="pause_advance"
+        android:key="auto_interval"
         android:maxLines="1"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="Pause Advance (ms)" />
-    
-    
-    <EditTextPreference
-        android:defaultValue="@string/pref_default_pause_advance"
-        android:inputType="number"
-        android:key="auto_wait_before_call"
-        android:maxLines="1"
-        android:selectAllOnFocus="true"
-        android:singleLine="true"
-        android:title="Auto Test: Wait before Call (ms)" />
+        android:title="Interval (ms)" />
     
     <EditTextPreference
-        android:defaultValue="@string/pref_default_pause_advance"
+        android:defaultValue="@string/pref_default_auto_start_rate"
         android:inputType="number"
-        android:key="auto_wait_after_call"
+        android:key="auto_start_rate"
         android:maxLines="1"
         android:selectAllOnFocus="true"
         android:singleLine="true"
-        android:title="Auto Test: Wait after Call (ms)" />
+        android:title="Start Rate (kbps)" />
+    
+    <EditTextPreference
+        android:defaultValue="@string/pref_default_auto_end_rate"
+        android:inputType="number"
+        android:key="auto_end_rate"
+        android:maxLines="1"
+        android:selectAllOnFocus="true"
+        android:singleLine="true"
+        android:title="End Rate (kbps)" />
+    
 
 </PreferenceScreen>
